@@ -18,5 +18,8 @@ public class SecurityConfiguration {
                                 .authenticated())
                 .oauth2ResourceServer()
                 .jwt();
+
+        // Add CORS filters
+        http.cors();
     }
 }
