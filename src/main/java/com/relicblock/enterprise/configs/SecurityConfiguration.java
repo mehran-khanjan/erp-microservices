@@ -21,5 +21,9 @@ public class SecurityConfiguration {
 
         // Add CORS filters
         http.cors();
+
+        // Add content negotiation strategy
+        http.setSharedObject(ContentNegotiationStrategy.class,
+                new HeaderContentNegotiationStrategy());
     }
 }
