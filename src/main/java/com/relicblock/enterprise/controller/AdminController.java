@@ -31,4 +31,14 @@ public class AdminController {
         }
         adminService.decreaseBookQuantity(bookId);
     }
+
+    @PostMapping("/secure/add/book")
+    public void postBook(@RequestHeader(value="Authorization") String token,
+                         @RequestBody AddBookRequest addBookRequest) throws Exception {
+        String admin = ExtractJWT.payloadJWTExtraction(token, "\"userType\"");
+        if (admin == null || !admin.equals("admin")) {
+            throw new Exception("Administration page only");
+        }
+        adminService.postBook(addBookRequest);
+    }
 }
