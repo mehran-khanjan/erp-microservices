@@ -21,4 +21,14 @@ public class ReviewController {
         }
         return reviewService.userReviewListed(userEmail, bookId);
     }
+
+    @PostMapping("/secure")
+    public void postReview(@RequestHeader(value="Authorization") String token,
+                           @RequestBody ReviewRequest reviewRequest) throws Exception {
+        String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
+        if (userEmail == null) {
+            throw new Exception("User email is missing");
+        }
+        reviewService.postReview(userEmail, reviewRequest);
+    }
 }
