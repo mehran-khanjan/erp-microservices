@@ -11,4 +11,9 @@ public class Checkout {
         this.returnDate = returnDate;
         this.bookId = bookId;
     }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 }
