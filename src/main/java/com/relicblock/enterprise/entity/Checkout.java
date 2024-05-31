@@ -19,4 +19,7 @@ public class Checkout {
 
     @Column(name = "user_email")
     private String userEmail;
+
+    @Column(name = "checkout_date")
+    private String checkoutDate;
 }
