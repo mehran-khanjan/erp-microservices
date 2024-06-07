@@ -23,6 +23,9 @@ public class Checkout {
     @Column(name = "checkout_date")
     private String checkoutDate;
 
-    @Column(name = "user_email")
-    private String userEmail;
+    @Column(name = "return_date")
+    private String returnDate;
+
+    @Column(name = "book_id")
+    private Long bookId;
 }
