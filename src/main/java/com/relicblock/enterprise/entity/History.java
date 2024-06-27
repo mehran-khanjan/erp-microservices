@@ -26,4 +26,8 @@ public class History {
 
     @Column(name="checkout_date")
     private String checkoutDate;
+
+    @Column(name="returned_date")
+    private String returnedDate;
+
 }
