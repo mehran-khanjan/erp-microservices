@@ -30,4 +30,8 @@ public class History {
     @Column(name="returned_date")
     private String returnedDate;
 
+    @Column(name="title")
+    private String title;
+
+
 }
