@@ -33,5 +33,8 @@ public class History {
     @Column(name="title")
     private String title;
 
+    @Column(name="author")
+    private String author;
+
 
 }
